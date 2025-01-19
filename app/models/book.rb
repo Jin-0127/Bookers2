@@ -8,3 +8,6 @@ class Book < ApplicationRecord
       image.attach(io: File.open(file_path),filename: 'default-image.jpg',content_type:'image/jpeg')
   end
 end
+class Book < ApplicationRecord
+  has_one_attached :image
+end
