@@ -28,6 +28,34 @@
   <%= f.submit 'Create Book' %>
 <% end %>
 
-<table>
+<% @books.each do |book| %>
+  <div>
+    <h2>Books</h2>
+    <% link_to book_path(book) do %>
+      <%= image_tag book.get_image %>
+    <% end %>
 
-</table>
+    <table class="Books">
+      <thead>
+        <th></th>
+        <th>Title</th>
+        <th>Option</th>
+        <th colspan="3"></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= link_to  image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %>
+          </td>
+          <td>
+            <%=link_to book.title,book_path(book) %>
+          </td>
+          <td>
+            <%= book.body %>
+          </td>
+        </tr>
+      <tbody>
+      </table>
+  <% end %>
+
+
