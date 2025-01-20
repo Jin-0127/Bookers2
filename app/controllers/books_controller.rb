@@ -12,6 +12,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @user =User.first
   end
 
   def show

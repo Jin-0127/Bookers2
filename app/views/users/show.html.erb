@@ -1,17 +1,18 @@
 <div>
-  <h3><%= @user.name %><h3>
+  <h3>User info</h3>
   <%= image_tag @user.get_profile_image(100,100)%>
-</div>
+  <table class= "Usertable">
+  <tr>
+    <th>名前</th>
+    <th><%=current_user.name %></th>
+  </tr>
 
-<% @books.each do |book| %>
-<div>
-  <%= link_to book_path(book.id) do %>
-    <%= image_tag book.get_image %>
-  <% end %>
-  <p>投稿ユーザー画像:<%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p>本のタイトル<%= book.title %></p>
-  <p>感想<%= book.body %></p>
-  <p>ユーザーネーム:<%= book.user.name %></p>
-</div>
+  <tr>
+    <th>自己紹介文</th>
+    <th><%=current_user.introduction %></th>
+  </tr>
+ </table>
+ <%= link_to edit_user_path(@user),class:"btn btn-outline-secondary " do %>
+  <i class="fa-solid fa-user-gear"></i>
 <% end %>
-
+</div>

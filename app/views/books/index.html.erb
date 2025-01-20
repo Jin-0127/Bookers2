@@ -1,9 +1,33 @@
-<% @books.each do |book| %>
-  <div>
-    <%= image_tag book.get_image %>
-    <p>投稿ユーザー画像:<%= image_tag 'sample-author1.jpg' %></p>
-    <p>本のタイトル:<%= book.title %></p>
-    <p>感想:<%= book.body %></p>
-    <p>ユーザー名<%= book.user_name %></p>
-  </div>
+<div>
+  <h3>User info</h3>
+  <%= image_tag @user.get_profile_image(100,100)%>
+  <table class= "Usertable">
+  <tr>
+    <th>名前</th>
+    <th><%=current_user.name %></th>
+  </tr>
+
+  <tr>
+    <th>自己紹介文</th>
+    <th><%=current_user.introduction %></th>
+  </tr>
+ </table>
+ <%= link_to edit_user_path(@user),class:"btn btn-outline-secondary " do %>
+  <i class="fa-solid fa-user-gear"></i>
 <% end %>
+</div>
+
+
+<h1>book detail<h1>
+<%= form_with model: @book do |f| %>
+  
+  <h4>本のタイトル<h4>
+  <%= f.text_field :title %>
+  <h4>感想</h4>
+  <%= f.text_area :body %></br>
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+<table>
+
+</table>
