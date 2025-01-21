@@ -45,7 +45,8 @@
       <tbody>
         <tr>
           <td>
-            <%= link_to  image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %>
+            <%= link_to  image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %><br/>
+            <%= current_user.id %>
           </td>
           <td>
             <%=link_to book.title,book_path(book) %>
