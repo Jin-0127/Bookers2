@@ -1,18 +1,9 @@
-<div>
-  <h3>User info</h3>
-  <%= image_tag @user.get_profile_image(100,100)%>
-  <table class= "Usertable">
-  <tr>
-    <th>名前</th>
-    <th><%=current_user.name %></th>
-  </tr>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
 
-  <tr>
-    <th>自己紹介文</th>
-    <th><%=current_user.introduction %></th>
-  </tr>
- </table>
- <%= link_to edit_user_path(@user),class:"btn btn-outline-secondary " do %>
-  <i class="fa-solid fa-user-gear"></i>
-<% end %>
+<%= render "books/user" ,user: @user %>
+<%= render "books/book" ,book: @book %>   
+    </div>
+  </div>
 </div>
