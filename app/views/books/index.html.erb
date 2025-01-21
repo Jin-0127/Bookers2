@@ -1,3 +1,6 @@
+<div class= container>
+  <div class=row>
+<div  class="col-md-4">
 <div>
   <h3>User info</h3>
   <%= image_tag @user.get_profile_image(100,100)%>
@@ -11,8 +14,8 @@
     <th>自己紹介文</th>
     <th><%=current_user.introduction %></th>
   </tr>
- </table>
- <%= link_to edit_user_path(@user),class:"btn btn-outline-secondary " do %>
+  </table>
+  <%= link_to edit_user_path(@user),class:"btn btn-outline-secondary " do %>
   <i class="fa-solid fa-user-gear"></i>
 <% end %>
 </div>
@@ -27,7 +30,8 @@
   <%= f.text_area :body %></br>
   <%= f.submit 'Create Book' %>
 <% end %>
-
+</div>
+<div class="col-md-7 offset-md-1">
 <% @books.each do |book| %>
   <div>
     <h2>Books</h2>
@@ -58,5 +62,8 @@
       <tbody>
       </table>
   <% end %>
+    </div>
+  </div>
+</div>
 
 
