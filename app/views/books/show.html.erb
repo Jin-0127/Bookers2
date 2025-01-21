@@ -1,4 +1,7 @@
-  <h2>Books</h2>
+<%= render 'user',user: @user %>
+<%= render 'book',book: @book %>
+<br/>
+<h2>Books</h2>
     <% link_to book_path(@book) do %>
       <%= image_tag @book.get_image %>
     <% end %>
@@ -27,3 +30,5 @@
       </table>
       <%= link_to "Edit",edit_book_path(@book)%>
       <%= link_to "Destroy",book_path(@book),method: :delete,"data-confirm" =>"本当に削除しますか?" %>
+
+
