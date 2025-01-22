@@ -1,24 +1,16 @@
 <div class=container>
-  <div class="row">
-    <div class="col-md-4">
-
-      <%= render 'user',user: @user %>
-      <%= render 'book',book: @book %>
-    </div>
-
-    <div class="col-md-7 offset-md-1">
+   <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
     
-    <h1>book detail<h1>
+    <h2>Editing Book</h2>
     <%= form_with model: @book do |f| %>
-      <h4>画像<h4>
-      <%= f.file_field :image, accept: "image/*" %>
-      <h4>本のタイトル<h4>
-      <%= f.text_field :title %>
-      <h4>感想</h4>
-      <%= f.text_area :body %>
-      <%= f.submit 'Create Book' %>
+      <h4>title<h4>
+      <%= f.text_field :title,class: "btn-block" %>
+      <h4>Opinion</h4>
+      <%= f.text_area :body,class: "btn-block" %><br/>
+      <%= f.submit 'Update Book', class: "btn btn-success" %>
     <% end %>
-    <%= link_to 'Back', 'javascript:history.back()'%>
+    <%= link_to 'Back', 'javascript:history.back()'%>|
       <%=link_to "show",book_path(@book) %>
     </div>
   </div>

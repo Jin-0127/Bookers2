@@ -1,19 +1,19 @@
 <div class= container>
   <div class=row>
-<div  class="col-md-4">
+<div  class="col-md-3">
 
 <%= render "user",user:@user %>
 
-<%= render "book",book:@book %>
+<%= render "book",book:@new_book %>
 
 </div>
 
-<div class="col-md-7 offset-md-1">
+<div class="col-md-8 offset-md-1">
 <h2>Books</h2>
   <div>
-    <table class="Books">
+    <table class=" table-hover table-inverse">
       <thead>
-        <tr>
+        <tr class="">
           <th></th>
           <th>Title</th>
           <th>Option</th>
@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <% @books.each do |book| %>
-      <tbody>
+      <tbody class="table">
         <tr>
           <td>
             <%= link_to  image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %><br/>

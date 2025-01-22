@@ -3,7 +3,36 @@
     <div class="col-4">
 
 <%= render "books/user" ,user: @user %>
-<%= render "books/book" ,book: @book %>   
+<%= render "books/book" ,book: @new_book %>   
     </div>
+    
+    <div class="col-7 offset-1">
+    <h2>Books</h2>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Option</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <% @books.each do |book| %>
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to  image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %><br/>
+            </td>
+            <td>
+              <%=link_to book.title,book_path(book) %>
+            </td>
+            <td>
+              <%= book.body %>
+            </td>
+          </tr>
+        <tbody>
+        <% end %>
+        </table>
   </div>
 </div>
