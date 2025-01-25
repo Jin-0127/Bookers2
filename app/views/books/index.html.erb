@@ -1,43 +1,43 @@
-<%= render "flash",book:@new_book %>
+<%= render "flash", book:@book %>
 
-<div class= container>
-  <div class=row>
+<div class= "container">
+  <div class="row">
     <div  class="col-md-3">
 
-<%= render "user",user:@user %>
+      <%= render "user",user:@user %>
 
-<%= render "book",book:@new_book %>
+      <%= render "book",book:@new_book %>
 
-</div>
+      </div>
 
-<div class="col-md-8 offset-md-1">
-<h2>Books</h2>
-  <div>
-    <table class=" table-hover table-inverse">
-      <thead>
-        <tr class="">
-          <th></th>
-          <th>Title</th>
-          <th>Option</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <% @books.each do |book| %>
-      <tbody class="table">
-        <tr>
-          <td>
-            <%= link_to  image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %><br/>
-          </td>
-          <td>
-            <%=link_to book.title,book_path(book) %>
-          </td>
-          <td>
-            <%= book.body %>
-          </td>
-        </tr>
-      <tbody>
-      <% end %>
-      </table>
+      <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+        <div>
+          <table class=" table-hover table-inverse">
+            <thead>
+              <tr class="">
+                <th></th>
+                <th>Title</th>
+                <th>Option</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+            <% @books.each do |book| %>
+              <tbody class="table">
+                <tr>
+                  <td>
+                    <%= link_to  image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %><br/>
+                  </td>
+                  <td>
+                    <%=link_to book.title,book_path(book) %>
+                  </td>
+                  <td>
+                    <%= book.body %>
+                  </td>
+                </tr>
+              <tbody>
+            <% end %>
+            </table>
     </div>
   </div>
 </div>
