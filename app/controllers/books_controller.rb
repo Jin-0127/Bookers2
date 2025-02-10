@@ -47,7 +47,7 @@ class BooksController < ApplicationController
       flash[:notice]="You have updated book successfully."
       redirect_to book_path(@book)
     else
-      flash.now[notice]="error"
+      flash.now[:notice]="error"
       render 'edit'
     end
   end
